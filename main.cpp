@@ -18,5 +18,7 @@ int main()
     }
     
     h.stop("test");
+    h.report();
+
     return 0;
 }
