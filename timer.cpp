@@ -21,6 +21,11 @@ void timer::report()
         const std::string& name = pair.first;
         std::vector<long long>& v = pair.second;
 
+        if(v.empty())
+        {
+            continue;
+        }
+
         long long min = v[0];
         long long max = v[0];
         long long sum = 0;

@@ -8,17 +8,19 @@
 
 int main()
 {
+    HBENCH("test")
+{    
     h.start("test");
-    
-    int s = 0;
 
-    for (int i = 0; i < 271000; i++)
+    int x = 0;
+    for (int i = 0; i < 100000; i++)
     {
-        s += i * i;
+        x += rand();
     }
-    
+
     h.stop("test");
-    h.report();
+}
+h.report();
 
     return 0;
 }
