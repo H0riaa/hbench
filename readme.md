@@ -1,6 +1,6 @@
 # hbench
 
-Simple C++ profiling / timing library.
+Simple C++ profiling library.
 
 ## Features
 
