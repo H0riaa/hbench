@@ -16,16 +16,29 @@ void timer::stop(const std::string& name)
 
 void timer::report()
 {
+
+
     for(auto& pair : results)
     {
         const std::string& name = pair.first;
         std::vector<long long>& v = pair.second;
+        std::vector<long long> sorted = v;
+        std::sort(sorted.begin(), sorted.end());
+        long long median;
+        if(sorted.size() % 2 == 0)
+        {
+            median = (sorted[sorted.size()/2 - 1] + sorted[sorted.size()/2]) / 2;
+        }
+        else
+        {
+            median = sorted[sorted.size() / 2];
+        }
 
         if(v.empty())
         {
             continue;
         }
-
+        
         long long min = v[0];
         long long max = v[0];
         long long sum = 0;
@@ -48,5 +61,6 @@ void timer::report()
         std::cout << "MIN: " << min << "us\n";
         std::cout << "MAX: " << max << "us\n";
         std::cout << "AVERAGE: " << avg << "us\n";
+        std::cout << "MEDIAN: " << median << "us\n";
     }
 }

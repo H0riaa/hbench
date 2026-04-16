@@ -3,6 +3,7 @@
 #include <map>
 #include <chrono>
 #include <vector>
+#include <algorithm>
 
 #define HBENCH(name) \
 for(int _i = 0; _i < 1000; _i++)
