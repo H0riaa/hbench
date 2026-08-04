@@ -1,6 +1,6 @@
 # hbench
 
-Simple C++ profiling library.
+Simple C++ profiling / timing library.
 
 ## Features
 
@@ -9,3 +9,27 @@ Simple C++ profiling library.
 - Uses high resolution clock
 
 ---
+## Build Instructions
+
+### Requirements
+
+- g++
+- GNU Make
+- C++17
+
+### Build
+```
+Clean previous build (optional):
+
+- make clean
+```
+```
+Compile the project:
+
+- make
+```
+```
+Run the executable:
+
+- make run
+```
