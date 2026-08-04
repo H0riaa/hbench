@@ -1,5 +1,6 @@
 #include "hbench.h"
 
+
 timer h;
 void timer::start(const std::string& name)
 {
@@ -14,10 +15,18 @@ void timer::stop(const std::string& name)
     results[name].push_back(duration);
 }
 
+void timer::time(void (*func)(), const std::string& name)
+{
+    for(int i = 0; i < 1000; i++)
+    {
+        start(name);
+        func();
+        stop(name);
+    }
+}
+
 void timer::report()
 {
-
-
     for(auto& pair : results)
     {
         const std::string& name = pair.first;
@@ -25,6 +34,10 @@ void timer::report()
         std::vector<long long> sorted = v;
         std::sort(sorted.begin(), sorted.end());
         long long median;
+        if(v.empty())
+        {
+            continue;
+        }
         if(sorted.size() % 2 == 0)
         {
             median = (sorted[sorted.size()/2 - 1] + sorted[sorted.size()/2]) / 2;
@@ -34,10 +47,7 @@ void timer::report()
             median = sorted[sorted.size() / 2];
         }
 
-        if(v.empty())
-        {
-            continue;
-        }
+     
         
         long long min = v[0];
         long long max = v[0];

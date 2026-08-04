@@ -5,8 +5,7 @@
 #include <vector>
 #include <algorithm>
 
-#define HBENCH(name) \
-for(int _i = 0; _i < 1000; _i++)
+#define HBENCH(func) h.time(func, #func)
 
 
 class timer
@@ -18,6 +17,7 @@ class timer
     public:
         void start(const std::string&);
         void stop(const std::string&);
+        void time(void (*func)(), const std::string& name);
         void report();
 };
 extern timer h;

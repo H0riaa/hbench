@@ -1,26 +1,22 @@
 #include <iostream>
-#include <chrono>
-#include <string>
-#include <map>
+#include <cstdlib>
 #include "hbench.h"
 
-
-
-int main()
+void test()
 {
-    HBENCH("test")
-{    
-    h.start("test");
-
     int x = 0;
+
     for (int i = 0; i < 100000; i++)
     {
         x += rand();
     }
-
-    h.stop("test");
 }
-h.report();
+
+int main()
+{
+    HBENCH(test);
+
+    h.report();
 
     return 0;
 }
