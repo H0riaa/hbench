@@ -6,6 +6,8 @@
 #include <algorithm>
 
 #define HBENCH(func) h.time(func, #func)
+#define HSTART(name) for(int _hloop_i = 0; _hloop_i < 1000; _hloop_i++) { h.start(name);
+#define HSTOP(name)  h.stop(name); }
 
 
 class timer

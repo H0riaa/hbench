@@ -16,6 +16,14 @@ int main()
 {
     HBENCH(test);
 
+    int y = 0;
+    HSTART()
+        for(int j = 0; j < 10000; j++)
+        {
+            y += rand();
+        }
+    HSTOP()
+
     h.report();
 
     return 0;
