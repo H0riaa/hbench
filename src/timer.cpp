@@ -57,8 +57,8 @@ void timer::report()
         }
 
         double avg = (double)sum / v.size();
-
-        std::cout << name << '\n';
+        std::cout << '\n';
+        std::cout << name << '\n' << '\n';
         std::cout << "MIN: " << min << "us\n";
         std::cout << "MAX: " << max << "us\n";
         std::cout << "AVERAGE: " << avg << "us\n";
