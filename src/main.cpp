@@ -1,6 +1,7 @@
-#include <iostream>
-#include <cstdlib>
 #include "hbench.h"
+#include <cstdlib>
+#include <iostream>
+
 
 void test()
 {
@@ -15,7 +16,7 @@ void test()
 void test2(int a)
 {
     int x = 0;
-    for(int i = 0; i < a; i++)
+    for (int i = 0; i < a; i++)
     {
         x++;
     }
@@ -24,7 +25,7 @@ void test2(int a)
 void test3(int a, int b)
 {
     int s = 0;
-    for(int i = 0; i < b; i++)
+    for (int i = 0; i < b; i++)
     {
         s += a;
     }
@@ -37,21 +38,15 @@ int main()
     int y = 0;
     int z = 1000000;
     HSTART("manual")
-        for(int j = 0; j < 10000; j++)
-        {
-            y += rand();
-        }
+    for (int j = 0; j < 10000; j++)
+    {
+        y += rand();
+    }
     HSTOP("manual")
 
-    HBENCH([&]()
-    {
-        test2(z);
-    });
+    HBENCH([&]() { test2(z); });
 
-    HBENCH([&]()
-{
-    test3(5,10000);
-});
+    HBENCH([&]() { test3(5, 10000); });
 
     h.report();
 
