@@ -17,6 +17,13 @@ void timer::stop(const std::string& name)
 
 void timer::time(void (*func)(), const std::string& name)
 {
+
+    const int warmup = 100;
+    for(int i = 0; i < warmup; i++)
+    {
+        func();
+    }
+
     for(int i = 0; i < 1000; i++)
     {
         start(name);
