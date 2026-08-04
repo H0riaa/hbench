@@ -15,8 +15,8 @@ class timer
         std::map<std::string, std::vector<long long>> results;
 
     public:
-        void start(const std::string&);
-        void stop(const std::string&);
+        void start(const std::string& name = "manual");
+        void stop(const std::string& name = "manual");
         void time(void (*func)(), const std::string& name);
         void report();
 };
