@@ -15,22 +15,6 @@ void timer::stop(const std::string& name)
     results[name].push_back(duration);
 }
 
-void timer::time(void (*func)(), const std::string& name)
-{
-
-    const int warmup = 100;
-    for(int i = 0; i < warmup; i++)
-    {
-        func();
-    }
-
-    for(int i = 0; i < 1000; i++)
-    {
-        start(name);
-        func();
-        stop(name);
-    }
-}
 
 void timer::report()
 {
