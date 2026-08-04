@@ -36,12 +36,12 @@ int main()
 
     int y = 0;
     int z = 1000000;
-    HSTART()
+    HSTART("manual")
         for(int j = 0; j < 10000; j++)
         {
             y += rand();
         }
-    HSTOP()
+    HSTOP("manual")
 
     HBENCH([&]()
     {
