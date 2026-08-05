@@ -2,7 +2,7 @@
 
 **hbench** is a lightweight C++ profiling and benchmarking library designed to measure code execution time. It provides a simple API for function benchmarking, manual profiling, and RAII-based scoped timers.
 
-It uses `std::chrono` high-resolution clocks for accurate measurements and provides execution statistics such as minimum, maximum, average, and median times.
+It uses `std::chrono` high-resolution clocks for accurate measurements and provides execution statistics such as minimum, maximum, average, and median times, with automatic JSON export for benchmark results.
 
 ## Features
 
@@ -15,6 +15,7 @@ It uses `std::chrono` high-resolution clocks for accurate measurements and provi
   * Maximum
   * Average
   * Median
+* JSON output generation
 
 ## Requirements
 
@@ -30,6 +31,7 @@ It uses `std::chrono` high-resolution clocks for accurate measurements and provi
 
 * CMake
 * clang-format
+* nlohmann/json
 
 ## Usage
 
