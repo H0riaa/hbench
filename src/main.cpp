@@ -35,7 +35,7 @@ int main()
     HBENCH(test);
 
     int y = 0;
-    int z = 1000000;
+    int g = 1000000;
 
     HSTART("manual")
 
@@ -46,7 +46,7 @@ int main()
 
     HSTOP("manual")
 
-    HBENCH([&]() { test2(z); });
+    HBENCH([&]() { test2(g); });
 
     HBENCH([&]() { test3(5, 10000); });
 

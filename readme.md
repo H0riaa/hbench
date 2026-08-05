@@ -67,9 +67,10 @@ cmake --build .
 ## Run
 
 ### Windows
-
+```
 .\Debug\hbench.exe
-
+```
 ### Linux
-
+```
 ./hbench
+```

@@ -27,6 +27,14 @@ void timer::report()
         {
             continue;
         }
+        if (v.size() == 1)
+        {
+            std::cout << '\n';
+            std::cout << name << '\n' << '\n';
+            std::cout << "TIME: " << v[0] << "us\n";
+            continue;
+        }
+
         if (sorted.size() % 2 == 0)
         {
             median = (sorted[sorted.size() / 2 - 1] + sorted[sorted.size() / 2]) / 2;
