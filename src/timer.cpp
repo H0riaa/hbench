@@ -1,6 +1,7 @@
-#include <fstream>
 #include "hbench.h"
 #include "json.hpp"
+#include <fstream>
+
 using json = nlohmann::json;
 
 timer h;
@@ -82,4 +83,3 @@ void timer::report()
     std::ofstream output_file("results.json");
     output_file << j.dump(4);
 }
-
