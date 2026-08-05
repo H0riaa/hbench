@@ -1,4 +1,2 @@
-a.out
-*.o
-*.exe
-results.json
+build/
+.vscode/
