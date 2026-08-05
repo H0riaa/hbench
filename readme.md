@@ -21,6 +21,20 @@ It uses `std::chrono` high-resolution clocks for accurate measurements and provi
 * C++17
 * CMake 3.20+
 
+## Usage
+
+Include the library header:
+
+```cpp
+#include "hbench.h"
+```
+
+Then use one of the available profiling methods:
+
+* Function benchmarking with `HBENCH()`
+* Manual profiling with `HSTART()` / `HSTOP()`
+* RAII scoped timer
+
 ## Building
 
 hbench uses **CMake** for building.
@@ -40,6 +54,16 @@ cmake ..
 ```
 cmake --build .
 ```
+## Run
+
+### Windows
+
+.\Debug\hbench.exe
+
+### Linux
+
+./hbench
+
 ## Cross-platform Support
 
 * Windows (MSVC)
