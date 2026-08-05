@@ -1,4 +1,5 @@
 #include "hbench.h"
+#include "json.hpp"
 #include <cstdlib>
 #include <iostream>
 
