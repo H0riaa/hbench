@@ -45,6 +45,28 @@ Then use one of the available profiling methods:
 * Manual profiling with `HSTART()` / `HSTOP()`
 * RAII scoped timer
 
+## Output
+* After running the benchmarks, hbench automatically generates a `results.json` file containing the measured results.
+
+* All measurements are stored in microseconds (`us`).
+
+### Example:
+
+```json
+{
+    "unit": "microseconds",
+    "test": {
+        "min": 1157,
+        "max": 1696,
+        "average": 1179.27,
+        "median": 1169
+    },
+    "scope": {
+        "time": 117
+    }
+}
+```
+
 ## Building
 
 hbench uses **CMake** for building.
