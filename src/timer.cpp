@@ -21,6 +21,7 @@ void timer::stop(const std::string &name)
 void timer::report()
 {
     json j;
+    j["unit"] = "microseconds";
     for (auto &pair : results)
     {
         const std::string &name = pair.first;
