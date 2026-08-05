@@ -21,6 +21,16 @@ It uses `std::chrono` high-resolution clocks for accurate measurements and provi
 * C++17
 * CMake 3.20+
 
+## Cross-platform Support
+
+* Windows (MSVC)
+* Linux (GCC/g++)
+
+## Tools
+
+* CMake
+* clang-format
+
 ## Usage
 
 Include the library header:
@@ -63,13 +73,3 @@ cmake --build .
 ### Linux
 
 ./hbench
-
-## Cross-platform Support
-
-* Windows (MSVC)
-* Linux (GCC/g++)
-
-## Tools
-
-* CMake
-* clang-format
