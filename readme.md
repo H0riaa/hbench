@@ -1,4 +1,4 @@
-# hbench – A Modern C++ Profiling / Timing Library
+# hbench
 
 **hbench** is a lightweight C++ profiling and benchmarking library designed to measure code execution time. It provides a simple API for function benchmarking, manual profiling, and RAII-based scoped timers.
 
