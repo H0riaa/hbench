@@ -2,7 +2,6 @@
 #include <cstdlib>
 #include <iostream>
 
-
 void test()
 {
     int x = 0;
@@ -37,16 +36,28 @@ int main()
 
     int y = 0;
     int z = 1000000;
+
     HSTART("manual")
+
     for (int j = 0; j < 10000; j++)
     {
         y += rand();
     }
+
     HSTOP("manual")
 
     HBENCH([&]() { test2(z); });
 
     HBENCH([&]() { test3(5, 10000); });
+
+    {
+        scope_timer t("scope");
+        int q = 0;
+        for (int i = 0; i < 10000; i++)
+        {
+            q += rand();
+        }
+    }
 
     h.report();
 

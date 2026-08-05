@@ -1,35 +1,51 @@
-# hbench
+# hbench – A Modern C++ Profiling / Timing Library
 
-Simple C++ profiling / timing library.
+**hbench** is a lightweight C++ profiling and benchmarking library designed to measure code execution time. It provides a simple API for function benchmarking, manual profiling, and RAII-based scoped timers.
+
+It uses `std::chrono` high-resolution clocks for accurate measurements and provides execution statistics such as minimum, maximum, average, and median times.
 
 ## Features
 
-- Measure execution time of code blocks
-- Easy start/stop interface
-- Uses high resolution clock
+* Function benchmarking (`HBENCH()`)
+* Manual profiling (`HSTART()` / `HSTOP()`)
+* RAII scoped timer
+* High-resolution timing using `std::chrono`
+* Execution statistics:
+  * Minimum
+  * Maximum
+  * Average
+  * Median
 
----
-## Build Instructions
+## Requirements
 
-### Requirements
+* C++17
+* CMake 3.20+
 
-- g++
-- GNU Make
-- C++17
+## Building
 
-### Build
+hbench uses **CMake** for building.
+
+1. Create a build directory:
 ```
-Clean previous build (optional):
+mkdir build
+cd build
+```
 
-- make clean
+2. Configure the project:
 ```
+cmake ..
 ```
-Compile the project:
 
-- make
+3. Build the library:
 ```
+cmake --build .
 ```
-Run the executable:
+## Cross-platform Support
 
-- make run
-```
+* Windows (MSVC)
+* Linux (GCC/g++)
+
+## Tools
+
+* CMake
+* clang-format

@@ -5,10 +5,9 @@
 #include <string>
 #include <vector>
 
-
 #define HBENCH(func) h.time(func, #func)
 #define HSTART(name)                                                                               \
-    for (int _hloop_i = 0; _hloop_i < 1000; _hloop_i++)                                            \
+    for (int i = 0; i < 1000; i++)                                                                 \
     {                                                                                              \
         h.start(name);
 #define HSTOP(name)                                                                                \
@@ -41,3 +40,16 @@ class timer
     void report();
 };
 extern timer h;
+class scope_timer
+{
+  private:
+    std::string name;
+
+  public:
+    scope_timer(const std::string &timerName = "manual")
+    {
+        name = timerName;
+        h.start(name);
+    }
+    ~scope_timer() { h.stop(name); }
+};
