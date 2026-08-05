@@ -2,7 +2,7 @@
 #include "json.hpp"
 #include <fstream>
 
-using json = nlohmann::json;
+using json = nlohmann::ordered_json;
 
 timer h;
 void timer::start(const std::string &name)
